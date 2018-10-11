@@ -14,3 +14,9 @@ mkdir dataset
 echo.
 echo Creation du dossier NUMPY
 mkdir numpy
+echo.
+echo Creation du dossier TRAINEDMODEL
+mkdir trainedModel
+echo.
+echo Creation du dossier LOGS
+mkdir logs
