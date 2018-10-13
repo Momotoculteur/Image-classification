@@ -9,14 +9,12 @@ echo.
 echo Installation de TQDM
 conda install tqdm
 echo.
-echo Creation du dossier DATASET
-mkdir dataset
+echo Installation de Keras
+conda install keras
 echo.
-echo Creation du dossier NUMPY
-mkdir numpy
+echo Installation de Tensorflow
+conda install tensorflow
 echo.
-echo Creation du dossier TRAINEDMODEL
-mkdir trainedModel
+echo Installation de SkLearn
+conda install scikit-learn
 echo.
-echo Creation du dossier LOGS
-mkdir logs
