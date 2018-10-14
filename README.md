@@ -6,7 +6,7 @@ Permet de creer avec Tensorflow et Keras une reconnaissance d'image entre 5 type
 `$ install.bat`
 
 ## Generer les tableaux numpy
-Changer vos chemins du dataset d'image si besoin
+Changer les chemins si nécessaire :
 
 | Attribut | Description                    |
 | ------------- | ------------------------------ |
@@ -17,6 +17,8 @@ Lancer la commande suivante :
 `$ python generateNumpyFiles.py`
 
 ## Entrainer le model
+Changer les chemins si nécessaire :
+
 | Attribut | Description                    |
 | ------------- | ------------------------------ |
 | `csv_logger`      | Chemin du callbak permettant l'enregistrement des metriques      |
@@ -29,14 +31,29 @@ Lancer la commande suivante :
 `$ python trainModel.py`
 
 ## Generer les graphiques de suivi de métriques
+Changer les chemins si nécessaire :
+
+| Attribut | Description                    |
+| ------------- | ------------------------------ |
+| `pathLogs`      | Destination ou est notre fichier de métriques au format CSV      |
+| `pathSaveGraph`   | Chemin ou on va sauvegarder    |
 Lancer la commande suivante :
 `$ python generateMetrics.py`
 
 ## Generer la matrice de confusion
+Changer les chemins si nécessaire :
+| Attribut | Description                    |
+| ------------- | ------------------------------ |
+| `modelPath`      | Destination ou est stocké notre modele pré entrainé      |
+| `datasetTestPath`   | Chemin ou sont les images de test    |
+| `destinationMatrix`   | Destination ou on va sauvegarder notre matrice     |
+| `imageSize`   | On met l'ensemble du dataset à la même taille    |
 Lancer la commande suivante :
 `$ python generateConfusionMatrix.py`
 
 ## Realiser une prédiction sur une nouvelle donnée
+Changer les chemins si nécessaire :
+
 | Attribut | Description                    |
 | ------------- | ------------------------------ |
 | `modelPath`      | Chemin du model au format hdf5 pour le charger en memoire      |
