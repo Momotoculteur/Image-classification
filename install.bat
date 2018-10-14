@@ -18,3 +18,6 @@ echo.
 echo Installation de SkLearn
 conda install scikit-learn
 echo.
+echo Installation de MatPlotLib
+conda install matplotlib
+echo.
