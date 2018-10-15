@@ -1,4 +1,4 @@
-#Infos
+# Infos
 Code source du tutoriel de http://deeplylearning.fr
 Permet de creer avec Tensorflow et Keras une reconnaissance d'image entre 5 types de fleurs différentes, avec des algorithmes de deep learning.
 
@@ -12,7 +12,8 @@ Changer les chemins si nécessaire :
 | ------------- | ------------------------------ |
 | `pathNumpy`      | Destination ou seront sauvegarder les tableaux      |
 | `pathData`   | Chemin ou sont les images en format png    |
-| `imgResize`   | On met l'ensemble du dataset à la même taille    |
+| `imgResize`   | On met l'ensemble du dataset à la même taille    | 
+
 Lancer la commande suivante :
 `$ python generateNumpyFiles.py`
 
@@ -27,6 +28,7 @@ Changer les chemins si nécessaire :
 | `trainRatio`   | Ratio définissant la taille du jeu d'entrainemnt et de validation   |
 | `batch_size`   | Nombre d'item que on envoi sur une phase de feedforward/backpropagation   |
 | `earlyStopPatience`   | Permet de définir l'arrêt de l'entrainement, lorsque les données de précision sur le jeu de validation n'évolu plus  |
+
 Lancer la commande suivante :
 `$ python trainModel.py`
 
@@ -37,17 +39,20 @@ Changer les chemins si nécessaire :
 | ------------- | ------------------------------ |
 | `pathLogs`      | Destination ou est notre fichier de métriques au format CSV      |
 | `pathSaveGraph`   | Chemin ou on va sauvegarder    |
+
 Lancer la commande suivante :
 `$ python generateMetrics.py`
 
 ## Generer la matrice de confusion
 Changer les chemins si nécessaire :
+
 | Attribut | Description                    |
 | ------------- | ------------------------------ |
 | `modelPath`      | Destination ou est stocké notre modele pré entrainé      |
 | `datasetTestPath`   | Chemin ou sont les images de test    |
 | `destinationMatrix`   | Destination ou on va sauvegarder notre matrice     |
 | `imageSize`   | On met l'ensemble du dataset à la même taille    |
+
 Lancer la commande suivante :
 `$ python generateConfusionMatrix.py`
 
