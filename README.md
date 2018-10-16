@@ -4,6 +4,7 @@ Permet de creer avec Tensorflow et Keras une reconnaissance d'image entre 5 type
 
 ## Installer les pré-requis
 Permet d'installer les différentes bibliothèques essentiel pour réaliser des algorithmes de deep learning. Optionnel si vous avez déjà votre environnement pré-configuré.
+
 `$ install.bat`
 
 ## Generer les tableaux numpy
