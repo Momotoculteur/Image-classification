@@ -1,13 +1,20 @@
+#IMPORT
 from keras.models import load_model
 from PIL import Image
 import numpy as np
 import time
 
 
+"""
+# Classe permettant de réaliser une prédiction sur une nouvelle donnée
+"""
 
 
-#On definit les chemins d'acces au différentes hyper parametre
 def main():
+    """
+    # On definit les chemins d'acces au différentes hyper parametre
+    """
+
     modelPath = '.\\trainedModel\\moModel.hdf5'
     imagePath =  '.\\testImage\\rose.jpg'
     imageSize = (50,50)
@@ -16,9 +23,15 @@ def main():
     predict(modelPath, imagePath,imageSize, label)
 
 
-#Fonction qui permet de convertir une image en array, de charger le modele et de lui injecter notre image pour une prediction
 def predict(modelPath,imagePath, imageSize, label):
-
+    """
+    # Fonction qui permet de convertir une image en array, de charger le modele et de lui injecter notre image pour une prediction
+    :param modelPath: chemin du modèle au format hdf5
+    :param imagePath: chemin de l'image pour realiser une prediction
+    :param imageSize: défini la taille de l'image. IMPORTANT : doit être de la même taille que celle des images
+    du dataset d'entrainements
+    :param label: nom de nos 5 classes de sortie
+    """
 
     start = time.time()
 
@@ -72,6 +85,9 @@ def predict(modelPath,imagePath, imageSize, label):
 
     print('----------')
 
-# MAIN
+
 if __name__ == "__main__":
+    """
+    # MAIN
+    """
     main()

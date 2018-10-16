@@ -1,11 +1,22 @@
+# IMPORT
 import os
 from PIL import Image
 import numpy as np
 from tqdm import tqdm
 
+"""
+# Classe permettant de convertir notre dataset d'images en tableaux Numpy
+"""
 
-#Permet de lancer la conversion des images en tableau numpy
+
 def launchConversion(pathData, pathNumpy, resizeImg, imgSize):
+    """
+    # Permet de lancer la conversion des images en tableau numpy
+    :param pathData: chemin ou sont les
+    :param pathNumpy:
+    :param resizeImg:
+    :param imgSize:
+    """
 
     #Pour chaque classe
     for flowerClasse in os.listdir(pathData):
@@ -30,11 +41,21 @@ def launchConversion(pathData, pathNumpy, resizeImg, imgSize):
         np.save(pathNumpy + '\\ ' + flowerClasse + '.npy', imgs)
 
 
-## MAIN ##
-# on definit les chemins de nos données à convertir
-if __name__ == '__main__':
+def main():
+    """
+    # Fonction main
+    """
+
     pathNumpy = '.\\numpy'
     pathData = '.\\dataset'
     resizeImg = True
-    imgSize = (50,50)
+    imgSize = (50, 50)
     launchConversion(pathData, pathNumpy, resizeImg, imgSize)
+
+
+if __name__ == '__main__':
+    """
+    # MAIN
+    """
+    main()
+

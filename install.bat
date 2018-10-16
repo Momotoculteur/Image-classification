@@ -1,3 +1,4 @@
+::Script BAT pour installer les dépendances ( optionnel )
 @echo off
 echo.
 echo Installation de Numpy

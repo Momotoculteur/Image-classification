@@ -1,17 +1,38 @@
+# IMPORT
 import matplotlib.pyplot as plt
 import pandas as pd
 
+"""
+# Classe permettant de génerer 4 graphiques de suivit de métriques durant l'entrainement d'un modèle
+# Train accuracy, Train loss, Validation accuracy, Validation loss
+"""
 
-
-#Fonction permettant de creer nos graph de suivi de metriques
 def displayGraph(pathLog,pathSaveGraph):
+    """
+    # Fonction permettant de creer nos graph de suivi de metriques
+    :param pathLog: chemin du CSV contenant nos metrics
+    :param pathSaveGraph: chemin de destination pour sauvegarder nos 4 graphiques en jpg
+    """
+
     data = pd.read_csv(pathLog)
     # split into input (X) and output (Y) variables
     plot(data['epoch'], data['acc'], data['val_acc'], 'TRAIN_VAL_Accuracy', 'Epoch', 'Accuracy', 'upper left',pathSaveGraph)
     plot(data['epoch'], data['loss'], data['val_loss'], 'TRAIN_VAL_Loss', 'Epoch', 'Loss', 'upper left',pathSaveGraph)
 
-#Fonction d'affichage de graph
+
 def plot(X, Y, Y2, title, xLabel, yLabel, legendLoc, pathSaveGraph):
+    """
+    # Fonction d'affichage de graph
+    :param X: correspond au nombre d'époch
+    :param Y: correspond a la courbe accuracy
+    :param Y2: correspond a la courbe loss
+    :param title: titre du graphique
+    :param xLabel: label des abcisses
+    :param yLabel: label des ordonnees
+    :param legendLoc: legende
+    :param pathSaveGraph: chemin de sauvegarde pour les graphiques
+    """
+
    #On trace nos differentes courbes
     plt.plot(Y)
     plt.plot(Y2)
@@ -28,13 +49,18 @@ def plot(X, Y, Y2, title, xLabel, yLabel, legendLoc, pathSaveGraph):
 
 
 def main():
+    """
+    # Fonction main
+    """
+
     #Definition des chemins d'acces a notre fichier log
     pathLogs = '.\\logs\\log_moModel.csv'
     pathSaveGraph = '.\\graph'
     displayGraph(pathLogs,pathSaveGraph)
 
 
-
-# MAIN
 if __name__ == "__main__":
+    """
+    # MAIN
+    """
     main()

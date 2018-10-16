@@ -1,3 +1,4 @@
+# IMPORT
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import os
@@ -7,8 +8,22 @@ from sklearn.metrics import confusion_matrix
 import itertools
 from keras.models import load_model
 
-#Fonction qui va construire notre matrice de confusion
+
+"""
+# Classe permettant de génerer une matrice de confusion à partir d'un dataset de test et d'un modèle entrainé
+# au préalable
+"""
+
+
 def generateMatrix(model, datasetTestPath, imageSize, destinationMatrix):
+	"""
+	# Fonction qui va construire notre matrice de confusion
+	:param model: chemin du modèle à charger pour realiser la prediction
+	:param datasetTestPath: chemin du dataset contenant nos images de test
+	:param imageSize: definit la taille de l'ensemble de nos images
+	:param destinationMatrix: définit le chemin ou va être sauvegardé notre matrice sous format d'image
+	:return:
+	"""
 
 	#Les tableaux contenanrt les predictions
 	y_true = []
@@ -81,8 +96,12 @@ def generateMatrix(model, datasetTestPath, imageSize, destinationMatrix):
 	#On sauvegarde notre matrice en image
 	plt.savefig(destinationMatrix + '\\' + 'confusionMatrix')
 
-#Fonction main
+
 def main():
+	"""
+	# Fonction main
+	"""
+
 	#On definit les chemins de nos divers ressources
 	modelPath = '.\\trainedModel\\moModel.hdf5'
 	datasetTestPath = '.\\datasetTest'
@@ -92,6 +111,9 @@ def main():
 
 	generateMatrix(model, datasetTestPath, imageSize, destinationMatrix)
 
-# MAIN
+
 if __name__ == "__main__":
+	"""
+	# MAIN
+	"""
 	main()

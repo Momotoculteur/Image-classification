@@ -1,7 +1,7 @@
+# IMPORT
 import numpy as np
 import os
 import keras
-from keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D
@@ -11,15 +11,29 @@ from keras.optimizers import *
 from keras import regularizers
 
 
-#Permet de recuperer les labels de nos classe, leurs indices dans le tableau et leur matrix binaire one hot encoder
+"""
+# Classe permettant d'entrainer un modèle sur une jeu de données
+"""
+
+
 def get_labels(path):
+    """
+    # Permet de recuperer les labels de nos classe, leurs indices dans le tableau et leur matrix binaire one hot encoder
+    :param path: chemin ou sont stocké nos fichiers Numpy
+    """
+
     labels = [file.replace('.npy', '') for file in os.listdir(path) if file.endswith('.npy')]
     label_indices = np.arange(0, len(labels))
     return labels, label_indices, to_categorical(label_indices)
 
 
-#Retourner le dataset melanger en dataset d'entrainement et de validation selon un ratio
 def get_train_test(train_ratio, pathData):
+    """
+    # Retourner le dataset melanger en dataset d'entrainement et de validation selon un ratio
+    :param train_ratio: permet de gerer la part entre dataset de train et de validation
+    :param pathData: chemin des fichiers numpy
+    """
+
     labels, _, _ = get_labels(pathData)
     classNumber = 0
 
@@ -44,6 +58,10 @@ def get_train_test(train_ratio, pathData):
 
 
 def main():
+    """
+    # Fonction main
+    """
+
     #Definition des chemins et autres variables
     pathData = '.\\numpy'
     trainRatio = 0.8
@@ -91,45 +109,10 @@ def main():
     #On lance l'entrainement du modele
     trainning = model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_data=(x_test, y_test), callbacks=[early, check,csv_logger])
 
-# MAIN
+
 if __name__ == "__main__":
+    """
+    # MAIN
+    """
     main()
 
-
-
-""""
-#ALEXNET MODEL CUSTOM OPTI
-#C'est le modele ALEXNET fonctionnel sur Keras, avec quelques ajustements de ma part au niveaux
-#des hyperparametres, si vous souhaitez tester ce modele sur de plus gros dataset et de plus
-#grandes images d'entrees
-
-    model.add(
-        Conv2D(96, padding='same', kernel_size=(11, 11), strides=3, kernel_initializer='glorot_uniform',
-               activation='elu',
-               input_shape=(dimension[0], dimension[1], dimension[2])))
-    model.add(MaxPooling2D(pool_size=(3, 3), strides=2))
-
-    #model.add(Conv2D(256, padding='same', kernel_size=(5, 5), strides=1, kernel_initializer='glorot_uniform',
-#                     activation='elu'))
-    #model.add(MaxPooling2D(pool_size=(3, 3), strides=2))
-
-    #model.add(Conv2D(384, padding='same', kernel_size=(3, 3), strides=1, kernel_initializer='glorot_uniform',
-       #              activation='elu'))
-    #model.add(Conv2D(384, padding='same', kernel_size=(3, 3), strides=1, kernel_initializer='glorot_uniform',
-      #               activation='elu'))
-    #model.add(Conv2D(256, padding='same', kernel_size=(3, 3), strides=1, kernel_initializer='glorot_uniform',
-     #                activation='elu'))
-    #model.add(MaxPooling2D(pool_size=(3, 3), strides=2))
-
-
-    # Flatten layer -> matrix to vector
-    model.add(Flatten())
-    model.add(Dropout(0.5))
-
-    model.add(Dense(4096, kernel_initializer='glorot_uniform', activation='elu'))
-    model.add(Dropout(0.5))
-    model.add(Dense(4096, kernel_initializer='glorot_uniform', activation='elu'))
-    model.add(Dense(classNumber, kernel_initializer='glorot_uniform', activation='softmax'))
-
-
-"""
