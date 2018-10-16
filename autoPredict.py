@@ -64,10 +64,10 @@ def predict(modelPath,imagePath, imageSize, label):
     print('----------')
     print(" Prediction :")
     for i in range(0, len(label)):
-        print('     ' + label[i] + ' : ' + str(prediction[0][i] * 100.))
+        print('     ' + label[i] + ' : ' + "{0:.2f}%".format(prediction[0][i] * 100.))
 
     print()
-    print('RESULTAT : ' + word + ' : ' + str(pred))
+    print('RESULTAT : ' + word + ' : ' + "{0:.2f}%".format(pred))
     print('temps prediction : ' + "{0:.2f}secs".format(end-start))
 
     print('----------')
