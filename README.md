@@ -17,6 +17,7 @@ Changer les chemins si nécessaire :
 | `imgResize`   | On met l'ensemble du dataset à la même taille    | 
 
 Lancer la commande suivante :
+
 `$ python generateNumpyFiles.py`
 
 ## Entrainer le model
@@ -32,6 +33,7 @@ Changer les chemins si nécessaire :
 | `earlyStopPatience`   | Permet de définir l'arrêt de l'entrainement, lorsque les données de précision sur le jeu de validation n'évolu plus  |
 
 Lancer la commande suivante :
+
 `$ python trainModel.py`
 
 ## Generer les graphiques de suivi de métriques
@@ -43,6 +45,7 @@ Changer les chemins si nécessaire :
 | `pathSaveGraph`   | Chemin ou on va sauvegarder    |
 
 Lancer la commande suivante :
+
 `$ python generateMetrics.py`
 
 ## Generer la matrice de confusion
@@ -56,6 +59,7 @@ Changer les chemins si nécessaire :
 | `imageSize`   | On met l'ensemble du dataset à la même taille    |
 
 Lancer la commande suivante :
+
 `$ python generateConfusionMatrix.py`
 
 ## Realiser une prédiction sur une nouvelle donnée
@@ -68,4 +72,5 @@ Changer les chemins si nécessaire :
 | `imageResize`   | Doit être identique aux tailles d'image d'entrainement    |
 
 Puis lancer la commande suivante :
+
 `$ python autoPredict.py`
