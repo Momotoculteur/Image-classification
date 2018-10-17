@@ -1,5 +1,5 @@
 # Infos
-Code source du tutoriel de http://deeplylearning.fr
+Code source du tutoriel de https://deeplylearning.fr/cours-pratiques-deep-learning/reconnaissance-dimages/
 Permet de creer avec Tensorflow et Keras une reconnaissance d'image entre 5 types de fleurs différentes, avec des algorithmes de deep learning.
 
 ## Installer les pré-requis
